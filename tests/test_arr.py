@@ -1,4 +1,5 @@
 import pytest
+
 from utils import arrs
 
 
@@ -18,3 +19,12 @@ def test_slice(array_fixture):
 
 def test_slise__empty_array():
     assert arrs.my_slice([]) == []
+
+
+def test_get_val(data_fixture):
+    assert arrs.get_val(data_fixture, "apple") == "fruit"
+    assert arrs.get_val(data_fixture, "apple", "404") == "fruit"
+    assert arrs.get_val({}, "apple") == "not found"
+    assert arrs.get_val({}, "apple", "404") == "404"
+    assert arrs.get_val(data_fixture, "banana") == "not found"
+    assert arrs.get_val(data_fixture, "banana", "404") == "404"
