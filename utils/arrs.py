@@ -44,4 +44,12 @@ def my_slice(coll, start=None, end=None):
 
 
 def get_val(collection, key, default='not found'):
-    pass
+    """
+    Function that returns the value of the entered dictionary key
+    or specified value if there isn't such key
+    :param collection: source dictionary
+    :param key:  key dictionary
+    :param default: value if the key is not in the dictionary
+    :return: value found by key
+    """
+    return collection[key] if key in collection else default
